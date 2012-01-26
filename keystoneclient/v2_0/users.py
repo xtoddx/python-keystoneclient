@@ -90,7 +90,7 @@ class UserManager(base.ManagerWithFind):
         """
         return self._delete("/users/%s" % base.getid(user))
 
-    def list(self, tenant_id=None):
+    def list(self, tenant_id=None, limit=None):
         """
         Get a list of users (optionally limited to a tenant)
 
@@ -98,6 +98,11 @@ class UserManager(base.ManagerWithFind):
         """
 
         if not tenant_id:
-            return self._list("/users", "users")
+            url = '/users'
         else:
-            return self._list("/tenants/%s/users" % tenant_id, "users")
+            url = '/tenants/%s/users' % tenant_id
+
+        if limit:
+            url = '%s?limit=%i' % (url, limit)
+
+        return self._list(url, "users")

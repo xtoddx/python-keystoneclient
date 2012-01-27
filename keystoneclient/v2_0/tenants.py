@@ -48,12 +48,15 @@ class TenantManager(base.ManagerWithFind):
 
         return self._create('/tenants', params, "tenant")
 
-    def list(self):
+    def list(self, limit=None):
         """
         Get a list of tenants.
         :rtype: list of :class:`Tenant`
         """
-        return self._list("/tenants", "tenants")
+        url = '/tenants'
+        if limit:
+            url = "%s?limit=%i" % (url, limit)
+        return self._list(url, 'tenants')
 
     def update(self, tenant_id, tenant_name=None, description=None,
                enabled=None):

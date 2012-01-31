@@ -1,0 +1,11 @@
+python-keystoneclient (2011.3-final-rcb1) natty; urgency=low
+
+  * build against codedrop-01-20
+
+ -- RCB Builder <rcb-deploy@lists.rackspace.com>  Thu, 03 Nov 2011 15:18:23 -0500
+
+python-keystoneclient (2.4-0ubuntu1) natty; urgency=low
+
+  * Initial upload (FFe LP: #732461)
+
+ -- Thierry Carrez (ttx) <thierry@openstack.org>  Wed, 09 Mar 2011 13:54:33 +0100

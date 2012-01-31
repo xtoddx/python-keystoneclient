@@ -1,0 +1,16 @@
+Source: python-keystoneclient
+Section: python
+Priority: optional
+Maintainer: RCB Builder <rcb-deploy@lists.rackspace.com>
+XCBS-Original-Maintainer: Thierry Carrez <ttx@ubuntu.com>
+Build-Depends: cdbs, debhelper (>= 5.0.38), python-all (>= 2.3.5-11), python-support, python-distribute, python-nose, python-argparse, python-mock, python-httplib2
+XS-Python-Version: >= 2.5
+Standards-Version: 3.9.1
+
+Package: python-keystoneclient
+Architecture: all
+Depends: ${misc:Depends}, ${python:Depends}, python-pkg-resources, python-argparse, python-httplib2, python (>= 2.6) | python-simplejson
+XB-Python-Version: ${python:Versions}
+Description: client library for OpenStack Identity API
+ Python client library for interacting with OpenStack
+ Identity (keystone) through the OpenStack Identity API.
